@@ -150,7 +150,8 @@ tail_data <- tail(sort_data, 10)
 tail_dataframe <- as.data.frame(tail_data)
 reactable(tail_dataframe)
 ```
-We can see that some of the highest performing airlines are `Qantas Airways`, `Jetstar`, `Virgin Australia`, `Air New Zealand`, `Emirates`, `Cathay Pacific Airways`, and `Garuda Indonesia`.
+We can see that some of the highest performing airlines are `Qantas Airways`, `Jetstar`, `Virgin Australia`, 
+`Air New Zealand`, `Emirates`, `Cathay Pacific Airways`, and `Garuda Indonesia`.
 
 
 What are the top five most frequent routes? We want to watch maintenance checks for planes 
@@ -368,11 +369,3 @@ industry and raises the question of how we should encourage international travel
 to Australia post COVID.
 
 For further explanation, please see our explanatory video!
-
-
-
-
-
-
-
-
