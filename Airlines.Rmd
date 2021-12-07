@@ -45,7 +45,10 @@ a { /* Link colours */
 # Recommendation
 Client: fellow airline industry workers
 
-Based on findings within this report, we advise increased travel advertisement during the months leading up to September and December, an inquiry into the Qantas Airways buisness model, maintenance checks for route SYD-AKL, and research into what makes Australian-New Zealand relations so successful.
+Based on findings within this report, we advise increased travel advertisement during the 
+months leading up to September and December, an inquiry into the Qantas Airways buisness 
+model, maintenance checks for route SYD-AKL, and research into what makes Australian-New 
+Zealand relations so successful.
 
 # Initial Data Analysis
 Let's load in the data and some packages.
@@ -69,7 +72,8 @@ str(data)
 sum(is.na(data))
 ```
 
-Let's move onto exploring the data. What are the most popular months for travel within Australia? We want to increase advertising leading up to these months to maximize potential revenue.
+Let's move onto exploring the data. What are the most popular months for travel within Australia? 
+We want to increase advertising leading up to these months to maximize potential revenue.
 ```{r, echo=FALSE, results="hide"}
 # What months are most popular for travel to Australia?
 
@@ -113,7 +117,10 @@ fig
 See the three most popular months highlighted in orange: `December` followed by `March` then `September`.
 
 
-What airlines are most successful? We want to study their business models and understand why flyers choose certain airlines over others operating in their home country. See word cloud below for an overall visual understanding and the table of the top 10 most successful airlines for a more concrete understanding.
+What airlines are most successful? We want to study their business models and understand 
+why flyers choose certain airlines over others operating in their home country. See word 
+cloud below for an overall visual understanding and the table of the top 10 most successful 
+airlines for a more concrete understanding.
 ```{r, echo=FALSE}
 # What airlines are most successful?
 
@@ -146,7 +153,8 @@ reactable(tail_dataframe)
 We can see that some of the highest performing airlines are `Qantas Airways`, `Jetstar`, `Virgin Australia`, `Air New Zealand`, `Emirates`, `Cathay Pacific Airways`, and `Garuda Indonesia`.
 
 
-What are the top five most frequent routes? We want to watch maintenance checks for planes flying these routes in particular and ensure availability year round for these routes.
+What are the top five most frequent routes? We want to watch maintenance checks for planes 
+flying these routes in particular and ensure availability year round for these routes.
 ```{r, echo=FALSE, results="hide"}
 # What's the most popular route?
 
@@ -201,7 +209,8 @@ ggplot(routes.data, aes(x=x, y=y)) +
 Take a look at the top five emphasized lines. The routes are from Sydney, Melbourne, and Perth all to `Auckland, New Zealand`.
 
 
-What international countries visit Australia most frequently? We want to create a personalised experience for our most frequent customer base and understand how to attract flyers from other countries.
+What international countries visit Australia most frequently? We want to create a personalised 
+experience for our most frequent customer base and understand how to attract flyers from other countries.
 ```{r, echo=FALSE, eval=FALSE}
 # What international countries visit Australia the most?
 
@@ -250,7 +259,8 @@ Let's move onto some more formula research questions.
 # Research Questions 
 
 ## Is there a relationship between most seats available and most frequent route? 
-We want to ensure that airlines are offering high seat availability for the most frequent routes to maximize profit. Let's explore through an independence test.
+We want to ensure that airlines are offering high seat availability for the 
+most frequent routes to maximize profit. Let's explore through an independence test.
 
 H0: Most frequent route is independent of seat count.
 
@@ -264,7 +274,10 @@ results <- chisq.test(mytable)
 print(results)
 ```
 
-We observe a p-value of `2.2e-16` which is extremely far below 0.05. Therefore our *statistical conclusion* is that we reject H0 as p < 0.05 and our *scientific conclusion* is that we can say with almost no doubt that most frequent route is not independent of seat number meaning they have some relationship. See relationship visualised below.
+We observe a p-value of `2.2e-16` which is extremely far below 0.05. Therefore our 
+*statistical conclusion* is that we reject H0 as p < 0.05 and our *scientific conclusion* 
+is that we can say with almost no doubt that most frequent route is not independent of
+seat number meaning they have some relationship. See relationship visualised below.
 
 ```{r, echo=FALSE, warning=FALSE}
 # Let's create a scatterplot to visualise the relationship that we just confirmed is present
@@ -333,7 +346,8 @@ ggplot(fit, aes(x=.fitted, y=.resid)) +
 ```
 
 Even though the linear model has a moderately strong correlation coefficient of nearly `0.6`,
-the residual plot demonstrates a clear trend so we deem the model to be unreliable. Let's switch to exploring through a line plot.
+the residual plot demonstrates a clear trend so we deem the model to be unreliable. 
+Let's switch to exploring through a line plot.
 
 ```{r, echo=FALSE}
 # Now making a linear plot instead
@@ -348,7 +362,10 @@ fig <- fig %>% layout(title = "Number of Flights by Year",
 fig
 ```
 
-We can see an `increasing trend` until late 2017 when COVID dramatically reduced the number of flights taken. This indicates the relative success of the airlines industry and raises the question of how we should encourage international travel to Australia post COVID.
+We can see an `increasing trend` until late 2017 when COVID dramatically reduced 
+the number of flights taken. This indicates the relative success of the airlines 
+industry and raises the question of how we should encourage international travel 
+to Australia post COVID.
 
 For further explanation, please see our explanatory video!
 
